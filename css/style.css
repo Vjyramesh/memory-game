@@ -1,16 +1,115 @@
-.game .grid{
-    width: 100px;
-    height: 100px;
-    float: left;
-    border: 1px solid #ccc;
-    margin: 5px;
+body {
+    margin: 0;
 }
-.correct{
-    background: #ccc;
+
+* {
+    box-sizing: border-box;
+}
+
+header {
+    height: 50px;
+    line-height: 50px;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.game-wrapper {
+    width: 60%;
+    margin: 15px auto;
+    position: relative;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.game-status-bar {
+    display: flex;
+    height: 50px;
+    align-items: center;
+    background: #2196F3;
+    color: #fff;
+}
+
+.game-status-bar > * {
+    flex: 1;
+    text-align: center;
+}
+
+.game-status-bar select {
+    background: transparent;
+    color: #fff;
+    border: none;
+    width: 50px;
+    font-size: 20px;
+}
+
+.game-status-bar select option {
     color: #000;
 }
-.row:after{
-    content: "";
-    clear: both;
-    display: block;
+.game-grid-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.game-grid-wrapper .grid {
+    padding: 10px;
+    border: 1px solid #9E9E9E;
+    text-align: center;
+    width: 50%;
+    line-height: 50px;
+}
+
+.game-grid-wrapper .grid span {
+    visibility: hidden;
+}
+
+.game-grid-wrapper .grid.shown-first span ,
+.game-grid-wrapper .grid.shown-second span ,
+.game-grid-wrapper .grid.shown span ,
+.game-grid-wrapper .grid.success-grid span {
+    visibility: visible;
+}
+
+.game-grid-wrapper .grid.success-grid {
+    background: #4CAF50;
+    border: 1px solid #fff;
+    color: #fff;
+}
+
+.game-wrapper.error-wrapper {
+    animation: error 0.1s infinite linear;
+}
+
+@keyframes error {
+    0% {
+        transform: rotate(2deg);
+    }
+    50% {
+        transform: rotate(-2deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.accuracy-rate {
+    position: absolute;
+    background: #fff;
+    width: 100%;
+    height: calc(100% - 50px);
+    text-align: center;
+    font-size: 33px;
+    color: #2196f3;
+    display: none;
+    top: 50px;
+}
+.accuracy-rate.shown {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.accuracy-rate h1 {
+        margin: 0 0 15px 0;
+}
+
+.accuracy-rate span {
+    font-size: 62px;
 }
