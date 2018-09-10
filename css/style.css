@@ -96,7 +96,7 @@ header {
     width: 100%;
     height: calc(100% - 50px);
     text-align: center;
-    font-size: 33px;
+    font-size: 20px;
     color: #2196f3;
     display: none;
     top: 50px;
@@ -107,9 +107,9 @@ header {
     justify-content: center;
 }
 .accuracy-rate h1 {
-        margin: 0 0 15px 0;
+        margin: 0;
 }
 
 .accuracy-rate span {
-    font-size: 62px;
+    font-size: 45px;
 }
