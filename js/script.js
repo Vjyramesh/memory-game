@@ -11,7 +11,6 @@ $(".row-column").on('change', function() {
 $("body").on('click', '.grid', function() {
         if($(".error-wrapper").length ==0 && $('.grid.shown').length == 0 && !$(this).hasClass("shown-first") && !$(this).hasClass("shown-second") && !$(this).hasClass("success-grid")) {
             var totalClicks = parseInt($(".total-clicks span").text())+1;
-            console.log($(".total-clicks span").text())
             $(".total-clicks span").text(totalClicks)
             clicked = !clicked;
              if(clicked) {
@@ -58,6 +57,8 @@ function gridGenerator() {
          rowHTML +=`<div class="grid shown" style="width: ${100/columnItem}%"><span>${gridValues[row-1]}</span></div>`;
         }
     }
+    $(".total-clicks span").text(0);
+    $(".total-completed span").text(0)
     gridWrapper.html(rowHTML);
     setTimeout(function() {
         $(".grid").removeClass("shown")    
